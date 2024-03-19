@@ -29,19 +29,19 @@ Models.py
 from django.db import models
 from django.contrib import admin
 class Books(models.Model):
-    title=models.CharField(max_length=30);
-    year_of_publishing=models.DateField();
-    author_name=models.CharField(max_length=20);
-    no_of_pages=models.IntegerField();
-    book_price=models.IntegerField();
-class BooksAdmin(admin.ModelAdmin):
-    list_display=("title","year_of_publishing","author_name","no_of_pages","book_price");
+    BOOK_TITLE=models.CharField(max_length=30);
+    YEAR_OF_PUBLISH=models.DateField();
+    AUTHOR_NAME=models.CharField(max_length=20);
+    NO_OF_PAGES=models.IntegerField();
+    BOOK_PRICE=models.IntegerField();
+class BOOKDBAdmin(admin.ModelAdmin):
+    list_display=("BOOK_TITLE","YEAR_OF_PUBLISH","AUTHOR_NAME"," BOOK_PRICE","  NO_OF_PAGES");
 
 Admin.py
 
 from django.contrib import admin
-from .models import Books,BooksAdmin 
-admin.site.register(Books,BooksAdmin)
+from .models import BOOKDB,BOOKAdmin 
+admin.site.register(BOOKDB,BOOKAdmin)
 ```
 ## OUTPUT
 

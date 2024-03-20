@@ -5,9 +5,7 @@
 To develop a Django application to store and retrieve data from a Book database using Object Relational Mapping(ORM).
 
 ## Entity Relationship Diagram
-![Screenshot 2024-03-19 221808](https://github.com/KMSusindhar/ORMs/assets/155904197/40fe9d97-c91e-44fa-8928-31b48aaadeef)
-
-
+![alt text](<Screenshot 2024-03-19 221808.png>)
 
 ## DESIGN STEPS
 
@@ -29,24 +27,26 @@ Models.py
 
 from django.db import models
 from django.contrib import admin
-class Books(models.Model):
+class BOOK(models.Model):
     BOOK_TITLE=models.CharField(max_length=30);
     YEAR_OF_PUBLISH=models.DateField();
     AUTHOR_NAME=models.CharField(max_length=20);
-    NO_OF_PAGES=models.IntegerField();
+    NO_OF_PAGE=models.IntegerField();
     BOOK_PRICE=models.IntegerField();
-class BOOKDBAdmin(admin.ModelAdmin):
-    list_display=("BOOK_TITLE","YEAR_OF_PUBLISH","AUTHOR_NAME"," BOOK_PRICE","  NO_OF_PAGES");
+class BOOKAdmin(admin.ModelAdmin):
+    list_display=("BOOK_TITLE","YEAR_OF_PUBLISH","AUTHOR_NAME","BOOK_PRICE","NO_OF_PAGE");
 
-Admin.py
+
+ADMIN.PY
 
 from django.contrib import admin
-from .models import BOOKDB,BOOKAdmin 
-admin.site.register(BOOKDB,BOOKAdmin)
+from .models import BOOK,BOOKAdmin 
+admin.site.register(BOOK,BOOKAdmin)
+
 ```
 ## OUTPUT
 
-![Table ](https://github.com/KMSusindhar/ORM/assets/155904197/ace0dee7-9920-46e0-8d52-a78b26f08f6a)
+![alt text](<Screenshot 2024-03-20 200210-1.png>)
 
 
 ## RESULT
